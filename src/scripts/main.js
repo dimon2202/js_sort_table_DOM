@@ -4,7 +4,6 @@
 const table = document.querySelector('table');
 const tbody = table.querySelector('tbody');
 const thead = table.querySelector('thead');
-const tfoot = table.querySelector('tfoot');
 
 const parseSalary = (srt) => {
   return +srt.split('').slice(1).join('').split(',').join('');
@@ -27,12 +26,6 @@ const sortColumn = (th) => {
 
 thead.addEventListener('click', (e) => {
   const th = e.target.closest('th') || '';
-
-  sortColumn(th);
-});
-
-tfoot.addEventListener('click', (e) => {
-  const th = e.target.closest('th');
 
   sortColumn(th);
 });
