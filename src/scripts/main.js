@@ -22,11 +22,11 @@ const sortColumn = (th) => {
     return a.localeCompare(b);
   });
 
-  return sorted.map((tr) => tbody.appendChild(tr));
+  return sorted.forEach((tr) => tbody.appendChild(tr));
 };
 
 thead.addEventListener('click', (e) => {
-  const th = e.target.closest('th');
+  const th = e.target.closest('th') || '';
 
   sortColumn(th);
 });
