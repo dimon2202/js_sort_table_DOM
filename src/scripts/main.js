@@ -25,7 +25,9 @@ const sortColumn = (th) => {
 };
 
 thead.addEventListener('click', (e) => {
-  const th = e.target.closest('th') || '';
+  const th = e.target.closest('th');
+
+  if (!th) return;
 
   sortColumn(th);
 });
